@@ -46,6 +46,18 @@ function App() {
     setIsEditting(false)
   };
 
+   const handleClear = (id) => {
+     setShopping([]);
+     setMsg({ message: "Item Removed", bcg: true });
+   };
+  const handleRemove = (id) => {
+    setShopping(shopping.filter((item)=>item.id!==id ))
+    setMsg({message:"Item Removed" , bcg:true})
+  }
+  const handleEdit = () => {
+    
+  }
+
   useEffect(() => {
     localStorage.setItem("shopping", JSON.stringify(shopping));
   }, [shopping]);
@@ -67,9 +79,9 @@ console.log(shopping);
         </form>
         {shopping.length > 0 && (
           <main>
-            <List shopping={shopping} />
+            <List shopping={shopping} handleEdit={handleEdit} handleRemove={handleRemove} />
             <div>
-              <button>Clear All</button>
+              <button className="clearBtn" onClick={handleClear}>Clear All</button>
             </div>
           </main>
         )}
