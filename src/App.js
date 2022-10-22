@@ -67,7 +67,7 @@ console.log(shopping);
       <div className='text-center'>
         <p>{msg.message}</p>
         <form action='' onSubmit={handleSubmit}>
-          <label htmlFor=''>Grocery Bud</label>
+          <label htmlFor=''>Shopping List</label>
           <input
             id='grocery'
             name='grocery'
