@@ -54,8 +54,13 @@ function App() {
     setShopping(shopping.filter((item)=>item.id!==id ))
     setMsg({message:"Item Removed" , bcg:true})
   }
-  const handleEdit = () => {
-    
+  const handleEdit = (id) => {
+    const oldItem=shopping.find((item)=>item.id===id)
+    refContainer.current.value=oldItem.title
+    setIsEditting(true)
+    const newList= shopping.toString().replace()
+    setEditID(oldItem.id)
+    setMsg({ message: "Please New List Item Enter", bcg: true });
   }
 
   useEffect(() => {
